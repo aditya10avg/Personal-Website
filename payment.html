@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            color: #333;
+        }
+        .payment-button {
+            display: inline-block;
+            margin: 20px;
+            padding: 15px 30px;
+            font-size: 18px;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .paypal { background-color: #0070BA; }
+        .gpay { background-color: #34A853; }
+        .paytm { background-color: #003399; }
+        .phonepe { background-color: #5E35B1; }
+    </style>
+</head>
+<body>
+
+    <h1>Make a Payment</h1>
+    <p>Click on your preferred payment method to pay:</p>
+
+    <!-- PayPal Button -->
+    <a href="https://www.paypal.me/adityaVG1005" target="_blank">
+        <button class="payment-button paypal">Pay with PayPal</button>
+    </a>
+
+    <div class="payment-method">
+        <h2>Pay with Google Pay</h2>
+        <img src="gpay.png" alt="Google Pay QR Code" class="qr-code">
+    </div>
+
+    <!-- Paytm QR Code -->
+    <div class="payment-method">
+        <h2>Pay with Paytm</h2>
+        <img src="paytm.png" alt="Paytm QR Code" class="qr-code">
+    </div>
+
+   
+</body>
+</html>
