@@ -20,7 +20,7 @@
             margin: 0 auto;
             padding: 40px 20px;
         }
-        h1 {
+        h1, h2 {
             font-weight: 600;
         }
         a {
@@ -67,6 +67,39 @@
             background-color: #45a049;
             color: white;
         }
+        .memories-list {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            margin-top: 20px;
+        }
+        .memory-item {
+            background-color: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .memory-item:hover {
+            transform: translateY(-5px);
+        }
+        .memory-item img, .memory-item video {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+        }
+        .memory-caption {
+            padding: 15px;
+            text-align: left;
+            font-size: 1em;
+        }
+        .memory-title {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        .memory-description {
+            color: #666;
+        }
     </style>
 </head>
 <body>
@@ -93,12 +126,42 @@
         </section>
         
         <section class="section">
+            <h2>Some Fun Stuff</h2>
+            <div class="memories-list">
+                <div class="memory-item">
+                    <img src="IMG-20240622-WA0026.jpg" alt="YTS Summer Program">
+                    <div class="memory-caption">
+                        <div class="memory-title">YTS Summer Program</div>
+                        <div class="memory-description">Got 100% Scholarship to attend and had a great time connecting and learning.</div>
+                    </div>
+                </div>
+                <div class="memory-item">
+                    <img src="/IMG-20240620-WA0015.jpg" alt="Black Jack">
+                    <div class="memory-caption">
+                        <div class="memory-title">Beginner's luck in Blackjack.</div>
+                        <div class="memory-description">Played Blackjack for the first time and that too won it with strange luck.</div>
+                    </div>
+                </div>
+                <div class="memory-item">
+                    <video controls>
+                        <source src="VID-20240622-WA0009.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="memory-caption">
+                        <div class="memory-title">Searching for ghosts in the Basement of restricted Building.</div>
+                        <div class="memory-description">Fan of Conjuring movies.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section">
             <h2>Reach Out to Me</h2>
             <p>I'm always open to interesting conversations and opportunities. Feel free to reach out to me at <a href="mailto:adityavg1005@gmail.com">adityavg1005@gmail.com</a>.</p>
         </section>
         
         <section class="section">
-            <a href="https://1drv.ms/w/c/d2918c0af29fe91f/Ede2TSQ-pRpGqTphAHkH0xwBCfzxZotmBFO2xD7P6rBrVA?e=jdER1k" class="section-link">List of Opportunities and Grants</a>
+            <a href="" class="section-link">List of Opportunities and Grants</a>
         </section>
 
         <section class="section">
