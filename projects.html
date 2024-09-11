@@ -53,6 +53,47 @@
         a:hover {
             color: #0056b3;
         }
+        .project-image {
+            max-width: 100px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .project-image:hover {
+            transform: scale(1.05);
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            padding-top: 100px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.9);
+        }
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+        }
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -66,16 +107,52 @@
             </tr>
             <tr>
                 <td>voic_doc</td>
-                <td>A Parkinson's detection model to detect Parkinson's symptoms based on voice features like tone ,jitters,pitch etc</td>
+                <td>A Parkinson's detection model to detect Parkinson's symptoms based on voice features like tone, jitters, pitch etc</td>
                 <td><a href="https://github.com/AdityaAVG/voice_doc.git">View Project</a></td>
             </tr>
             <tr>
                 <td>protect</td>
-                <td>A scam (financial scams ) protection software to protect you from potential scams by understanding the other person's speaking patterns ,attempts to trick the user (victim) using some very technical terms .Powered by llm's and use reverse search tecnhnology.</td>
+                <td>A scam (financial scams) protection software to protect you from potential scams by understanding the other person's speaking patterns, attempts to trick the user (victim) using some very technical terms. Powered by LLMs and use reverse search technology.</td>
                 <td><a href="https://github.com/AdityaAVG/Protect.git">View Project</a></td>
             </tr>
-            <!-- Add more rows as needed -->
+            <tr>
+                <td>Hand Wearable Belt to detect Parkinson's</td>
+                <td>A hand wearable sensor with a watch-like design to detect tremor frequency and amplitude and predict if the person has any possible symptoms of Parkinson's.</td>
+                <td><img src="IMG-20240623-WA0015.jpg" alt="Hand Wearable Belt" class="project-image" onclick="openModal(this)"></td>
+                <td><img src="IMG-20240618-WA0001.jpg" alt="Hand Wearable Belt" class="project-image" onclick="openModal(this)"></td>
+            </tr>
+            <tr></tr>
+                <td>NexTumbh</td>
+                <td>It is a community of hackers ,founders and reasearchers in AI/ML niche. It was aimed to start a residential community of talented folks and build something crazy out of it. Got around 20 joins in just 1 hours of server launch. Stopped working due to communication issues.</td>
+                <td><img src="NexTumbh.png" alt="NexTumbh Community" class="project-image" onclick="openModal(this)"></td>
+            </tr>
         </table>
     </div>
+
+    <div id="imageModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+
+    <script>
+        function openModal(img) {
+            var modal = document.getElementById("imageModal");
+            var modalImg = document.getElementById("modalImage");
+            modal.style.display = "block";
+            modalImg.src = img.src;
+        }
+
+        function closeModal() {
+            var modal = document.getElementById("imageModal");
+            modal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            var modal = document.getElementById("imageModal");
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
 </body>
 </html>
