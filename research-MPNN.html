@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predicting Quantum Properties of Organic Molecules using Neural Networks</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            padding: 0 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        ul {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+        pre {
+            background-color: #f8f9fa;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        .work-progress {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #e8f4f8;
+            border-left: 5px solid #3498db;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Predicting Quantum Properties of Organic Molecules using Neural Networks</h1>
+
+        <p>This project explores using neural networks to predict the <strong>Quantum Mechanical Properties</strong> of organic molecules. By leveraging the power of machine learning, we aim to enhance the understanding of molecular interactions and their biochemical behavior, which can have significant applications in <strong>drug discovery</strong> and molecular biology.</p>
+
+        <p>Our approach uses <strong>Message Passing Neural Networks (MPNN)</strong> to process molecular graphs and predict quantum properties, focusing on how atoms (nodes) and bonds (edges) in a molecule interact and share information.</p>
+
+        <h2>Dataset: QM9</h2>
+        <p>We utilize the <strong>QM9 dataset</strong>, which contains data on <strong>130,000 molecules</strong> with <strong>13 quantum mechanical properties</strong> for each molecule. These properties were predicted using <strong>Density Functional Theory (DFT)</strong>, a popular but computationally expensive quantum mechanics simulation method.</p>
+
+        <hr>
+
+        <h2>Key Phases of the Neural Network Model</h2>
+
+        <h3>1. Message Passing Phase</h3>
+        <p>In this phase, the model simulates the interaction between atoms. Each node (atom) receives and processes messages from its neighboring nodes, updating its <strong>hidden state</strong>. The exchange of information continues over multiple iterations, allowing the network to model how atoms influence one another.</p>
+
+        <h3>2. Readout Phase</h3>
+        <p>Once the message-passing phase completes, the <strong>readout function</strong> aggregates information from all nodes (atoms) and edges (bonds) in the graph. The final prediction, representing a specific <strong>quantum property</strong> of the molecule, is made from the processed data of the entire graph.</p>
+
+        <hr>
+
+        <h2>Analogy</h2>
+        <p>In the context of the molecular graph representation:</p>
+        <ul>
+            <li><strong>Nodes</strong> represent <strong>atoms</strong>.</li>
+            <li><strong>Edges</strong> represent <strong>bonds</strong> between the atoms.</li>
+        </ul>
+
+        <hr>
+
+        <h2>Models Used and Research Papers</h2>
+
+        <h3>1. CNN for Learning Molecular Fingerprints</h3>
+        <p>Learns information from both nodes and edges but separately. Fails to capture the interaction between nodes and edges.</p>
+
+        <h3>2. Gated Graph Neural Networks (GGNN)</h3>
+        <p>Enables nodes in the graph to exchange information with each other over several steps. Combines updated node states for final prediction.</p>
+
+        <h3>3. Interaction Networks</h3>
+        <ul>
+            <li><strong>Message Function:</strong> Generates messages by combining hidden states of connected atoms and bond types.</li>
+            <li><strong>Update Function:</strong> Updates the hidden states of atoms.</li>
+            <li><strong>Molecule-level Output:</strong> Combines all atom and bond information to predict properties like molecular stability and energy levels.</li>
+        </ul>
+
+        <h3>4. Molecular Graph Convolutions</h3>
+        <p>Updates atom info as well as the molecular info during the message phase. Helps the model learn how molecules behave by understanding how atoms and bonds influence each other.</p>
+
+        <h3>5. Deep Tensor Neural Networks</h3>
+        <p>Uses the "tanh" function to pass short, smooth, and manageable messages between atoms.</p>
+
+        <h3>6. Laplacian-based Methods</h3>
+        <p>Uses CNN on graphs by passing messages through nodes using Eigenvectors.</p>
+
+        <hr>
+
+        <h2>Accuracy Benchmarks</h2>
+        <p>We measure performance against:</p>
+        <ul>
+            <li><strong>DFT error</strong> – Error compared to DFT predictions.</li>
+            <li><strong>Chemical accuracy</strong> – Quantum chemical accuracy of predicted properties.</li>
+        </ul>
+
+        <hr>
+
+        <h2>Work Still Going On</h2>
+        <div class="work-progress">
+            <p>The next stage involves fine-tuning the models with the QM9 dataset to enhance prediction accuracy for drug discovery applications. Key areas of focus include:</p>
+            <ul>
+                <li>Improving model convergence during training.</li>
+                <li>Exploring different graph neural network architectures to optimize prediction.</li>
+                <li>Testing the generalization ability of models on unseen molecules.</li>
+                <li>Integrating additional molecular datasets to broaden predictive power.</li>
+            </ul>
+            <p>Further developments and implementation updates will be shared soon!</p>
+        </div>
+
+    </div>
+</body>
+</html>
