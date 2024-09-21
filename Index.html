@@ -34,12 +34,12 @@
         .section-link {
             font-weight: 400;
             font-size: 1.2em;
-            margin-bottom: 20px;
+            margin-bottom: 0px;
             display: inline-block;
         }
         .social-icons {
             display: flex;
-            gap: 20px;
+            gap: 30px;
             margin-top: 20px;
         }
         .social-icons a {
@@ -100,6 +100,40 @@
         .memory-description {
             color: #666;
         }
+        /* New Banner Section */
+        .research-banner {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            margin-bottom: 20px;
+            cursor: pointer;
+        }
+        .research-banner:hover {
+            transform: translateY(-5px);
+        }
+        .banner-image img {
+            width: 80%;
+            max-height: 250px;
+            object-fit: cover;
+        }
+        .banner-content {
+            padding: 15px;
+        }
+        .banner-title {
+            font-weight: 600;
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+        .banner-description {
+            color: #666;
+            margin-bottom: 10px;
+        }
+        .banner-read-time {
+            font-size: 0.9em;
+            color: #999;
+        }
     </style>
 </head>
 <body>
@@ -115,19 +149,33 @@
         
         <section class="section">
             <a href="about.html" class="section-link">My life Story</a>
+            <p><a href="about.html"> Check out how I spent my life and came over several barriers to pursue my interest.</a> </p>
         </section>
         
         <section class="section">
             <a href="projects.html" class="section-link">Projects</a>
+            <p>I have done and have been working on bunch of projects.<a href="projects.html">Check Out here</a></p>
         </section>
         
         <section class="section">
             <a href="thoughts.html" class="section-link">My Thoughts</a>
+            <p>I mostly write about startups, technology,my stupid thoughts and self-improvement.<a href="thoughts.html"> Click the link above to read my thoughts on these topics!</a> </p>
         </section>
+
+        <!-- New Banner for Research Summary -->
         <section class="section">
-            <pre> Read Zero to One is 3 days.
-            </pre>
+            <div class="research-banner" onclick="window.location.href='research-attention-is-all-you-need.html';">
+                <div class="banner-image">
+                    <img src="attention-is-all-you-need.jpg" alt="Attention is All You Need">
+                </div>
+                <div class="banner-content">
+                    <div class="banner-title">Attention is All You Need</div>
+                    <div class="banner-description">A deep dive into the revolutionary paper that introduced the Transformer model.</div>
+                    <div class="banner-read-time">Estimated read time: 15 minutes</div>
+                </div>
+            </div>
         </section>
+        
         <section class="section">
             <h2>Some Fun Stuff</h2>
             <div class="memories-list">
@@ -148,7 +196,6 @@
                 <div class="memory-item">
                     <video controls>
                         <source src="VID-20240622-WA0009.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
                     </video>
                     <div class="memory-caption">
                         <div class="memory-title">Searching for ghosts in the Basement of restricted Building.</div>
